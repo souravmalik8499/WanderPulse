@@ -2,11 +2,19 @@
   <body>
     <h3>Edit your Listing</h3>
     <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
-      <input name="listing[title]" value="<%= listing.title %>" type="text" />
+      <div class="mb-3">
+        <label for="title" class="form-label" >Title</label> 
+        <input name="listing[title]" value="<%= listing.title %>" type="text" class="form-control" />
+      </div>
+      
       <br /><br />
-      <textarea name="listing[description]">
-<%= listing.description %></textarea
-      >
+      <div class="mb-3">
+        <textarea name="listing[description]">
+<%= listing.description %></textarea>
+        <textarea name="listing[description]">
+          <%= listing.description %></textarea>
+      </div>
+      
       <br /><br />
       <input name="listing[image]" value="<%= listing.image %>" type="text" />
       <br /><br />
